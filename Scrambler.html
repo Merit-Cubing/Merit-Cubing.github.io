@@ -1,21 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <title>Merit Cubing - Scrambler</title>
-   <link rel="icon" href="https://i.ibb.co/LSx1q1p/Abstract-Vintage-Spartan-Warrior-Mascot-Logo.png" type="image/icon type">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merit Cubing - Scrambler</title>
+    <link rel="icon" href="https://i.ibb.co/LSx1q1p/Abstract-Vintage-Spartan-Warrior-Mascot-Logo.png">
+    <style>
+        body {
+            background-color: #000633;
+            color: #b9dae4;
+            text-align: center;
+        }
+        h1 {
+            color: #cd2b34;
+        }
+        button {
+            background-color: #cd2b34;
+            color: #b9dae4;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
-<body style="background-color: #000633;">
-<center>
-  <a href="https://merit-cubing.github.io/">
-    <img src="https://i.ibb.co/LSx1q1p/Abstract-Vintage-Spartan-Warrior-Mascot-Logo.png" alt="Home" border="0">
-  </a>
-</center>
-
-<center><h1 style="color: #cd2b34;">A place for cubers of all levels to learn, compete, and grow their skills.</h1></center>
-<hr>
- <center><button onclick="generateAndDisplayScramble()" style="background-color: #cd2b34; color: #b9dae4; padding: 15px 30px; font-size: 18px; border-radius: 10px;">Generate Scramble</button></center>
- <center><h1 id="scramble" style="color: #b9dae4;"></h1></center>
-
-  <script src="scrambler.js"></script>
+<body>
+    <a href="https://merit-cubing.github.io/">
+        <img src="https://i.ibb.co/LSx1q1p/Abstract-Vintage-Spartan-Warrior-Mascot-Logo.png" alt="Home">
+    </a>
+    <h1>A place for cubers of all levels to learn, compete, and grow their skills.</h1>
+    <hr>
+    <button onclick="generateAndDisplayScramble()">Generate Scramble</button>
+    <h1 id="scramble"></h1>
+    <script src="scrambler.js"></script>
 </body>
 </html>
