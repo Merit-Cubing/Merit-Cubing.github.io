@@ -11,9 +11,7 @@
                   move = moves[Math.floor(Math.random() * moves.length)];
               } while (move === lastMove);
 
-              if (Math.random() < 0.2) {
-                  move = move.toLowerCase();
-              }
+              
 
               modifier = modifiers[Math.floor(Math.random() * modifiers.length)];
               scramble.push(move + modifier);
