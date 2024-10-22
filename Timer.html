@@ -2,50 +2,25 @@
 <head>
     <title>Timer</title>
       <link rel="icon" href="images/logo.png">
-      <style>
-        body {
-            background-color: #000633;
-            color: #b9dae4;
-            text-align: center;
-        }
-        h1 {
-            color: #cd2b34;
-        }
-        button {
-            background-color: #cd2b34;
-            color: #b9dae4;
-            padding: 15px 30px;
-            font-size: 18px;
-            border-radius: 10px;
-            border: none;
-            cursor: pointer;
-        }
-        </style>
   </head>
-  <body style="background-color: #000633;">
-      <center>
+  <body>
           <a href="https://merit-cubing.github.io/">
-              <img src="images/logo.png" alt="Home" border="0">
+              <img src="images/logo.png" alt="Home">
           </a>
-      </center>
-
-      <center>
+      
           <h1>A place for cubers of all levels to learn, compete, and grow their skills.</h1>
-      </center>
+      
 
       <hr>
 
-      <center><div id="container">
-        <button onclick="generateAndDisplayScramble()">Generate Scramble</button>
+      <div id="container">
+        <button onclick="genScramble()">Generate Scramble</button>
     <h1 id="scramble"></h1>
     <script src="scrambler.js"></script>
-          <div id="timer" style="color: #b9dae4;font-size: 150px;">0.000</div>
-          <div style="color: #b9dae4;">Average of Last 5 Solves (AO5): <span id="ao5" style="color: #b9dae4;">N/A</span></div>
-      </div></center>
+          <div id="timer">0.000</div>
+          <div>Average of Last 5 Solves (AO5): <span id="ao5">N/A</span></div>
+      </div>
     
       <script src="timer.js"></script>
   </body>
   </html>
-
-
-<!Colors: Red: cd2b34 Blue: 000633 White: b9dae4>
