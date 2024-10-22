@@ -24,7 +24,7 @@
           return scramble.join(", ");
       }
 
-      function generateAndDisplayScramble() {
+      function genScramble() {
           const scramble = generateScramble();
           document.getElementById("scramble").textContent = scramble;
       }
