@@ -1,23 +1,40 @@
 let startTime, endTime, timerInterval;
 let times = [];
 
+function startTimer() {
+    startTime = Date.now();
+    timerInterval = setInterval(updateTimer, 10);
+}
+
+function stopTimer() {
+    if (startTime) {
+        endTime = Date.now();
+        clearInterval(timerInterval);
+        let time = (endTime - startTime) / 1000;
+        times.push(time);
+        if (times.length > 5) {
+            times.shift();
+        }
+        updateStats();
+        startTime = null;
+    }
+}
+
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
-        startTime = Date.now();
-        timerInterval = setInterval(updateTimer, 10);
+        startTimer();
     } else {
-        if (startTime) {
-            endTime = Date.now();
-            clearInterval(timerInterval);
-            let time = (endTime - startTime) / 1000;
-            times.push(time);
-            if (times.length > 5) {
-                times.shift();
-            }
-            updateStats();
-            startTime = null;
-        }
+        stopTimer();
     }
+});
+
+document.addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    startTimer();
+});
+
+document.addEventListener('touchend', () => {
+    stopTimer();
 });
 
 function updateTimer() {
