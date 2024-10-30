@@ -1,5 +1,6 @@
 let startTime, endTime, timerInterval;
 let times = [];
+let timerRunning = false;
 
 function startTimer() {
     startTime = Date.now();
@@ -17,24 +18,29 @@ function stopTimer() {
         }
         updateStats();
         startTime = null;
+        timerRunning = false;
     }
 }
 
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
-        startTimer();
-    } else {
-        stopTimer();
+        if (!timerRunning) {
+            startTimer();
+            timerRunning = true;
+        } else {
+            stopTimer();
+        }
     }
 });
 
 document.addEventListener('touchstart', (event) => {
     event.preventDefault();
-    startTimer();
-});
-
-document.addEventListener('touchend', () => {
-    stopTimer();
+    if (!timerRunning) {
+        startTimer();
+        timerRunning = true;
+    } else {
+        stopTimer();
+    }
 });
 
 function updateTimer() {
